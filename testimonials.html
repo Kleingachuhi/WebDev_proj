@@ -1,11 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testimonials — TechNova Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">TechNova</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+                        <button id="darkModeToggle" class="btn btn-outline-light btn-sm ms-2" aria-label="Toggle dark mode">🌙</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header text-center py-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">What Our Clients Say</h1>
+            <p class="lead">Real stories from real businesses we've helped.</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm text-center p-3">
+                    <img src="https://picsum.photos/seed/client1/100/100" class="rounded-circle mx-auto mb-3" style="width:80px;height:80px;object-fit:cover;" alt="Client 1" />
+                    <blockquote class="blockquote">
+                        <p>"TechNova transformed our online presence. Our sales increased by 40% within three months of launching our new site."</p>
+                    </blockquote>
+                    <div class="mt-auto">
+                        <strong>Sarah K.</strong>
+                        <div class="text-warning">★★★★★</div>
+                        <small class="text-muted">CEO, Bloom Cosmetics</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm text-center p-3">
+                    <img src="https://picsum.photos/seed/client2/100/100" class="rounded-circle mx-auto mb-3" style="width:80px;height:80px;object-fit:cover;" alt="Client 2" />
+                    <blockquote class="blockquote">
+                        <p>"The mobile app they built for us has over 50,000 downloads. The team was professional and delivered ahead of schedule."</p>
+                    </blockquote>
+                    <div class="mt-auto">
+                        <strong>David M.</strong>
+                        <div class="text-warning">★★★★★</div>
+                        <small class="text-muted">CTO, FitTrack</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm text-center p-3">
+                    <img src="https://picsum.photos/seed/client3/100/100" class="rounded-circle mx-auto mb-3" style="width:80px;height:80px;object-fit:cover;" alt="Client 3" />
+                    <blockquote class="blockquote">
+                        <p>"Their cloud migration services saved us 30% on infrastructure costs. The team was knowledgeable and responsive throughout."</p>
+                    </blockquote>
+                    <div class="mt-auto">
+                        <strong>Elena R.</strong>
+                        <div class="text-warning">★★★★★</div>
+                        <small class="text-muted">VP Engineering, DataFlow</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm text-center p-3">
+                    <img src="https://picsum.photos/seed/client4/100/100" class="rounded-circle mx-auto mb-3" style="width:80px;height:80px;object-fit:cover;" alt="Client 4" />
+                    <blockquote class="blockquote">
+                        <p>"TechNova's UX redesign doubled our user engagement. They truly understand user-centered design."</p>
+                    </blockquote>
+                    <div class="mt-auto">
+                        <strong>Michael T.</strong>
+                        <div class="text-warning">★★★★☆</div>
+                        <small class="text-muted">Product Lead, EduSphere</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm text-center p-3">
+                    <img src="https://picsum.photos/seed/client5/100/100" class="rounded-circle mx-auto mb-3" style="width:80px;height:80px;object-fit:cover;" alt="Client 5" />
+                    <blockquote class="blockquote">
+                        <p>"They helped us modernize our legacy systems. The transition was smooth and well-documented."</p>
+                    </blockquote>
+                    <div class="mt-auto">
+                        <strong>Priya N.</strong>
+                        <div class="text-warning">★★★★★</div>
+                        <small class="text-muted">IT Director, GreenEnergy</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm text-center p-3">
+                    <img src="https://picsum.photos/seed/client6/100/100" class="rounded-circle mx-auto mb-3" style="width:80px;height:80px;object-fit:cover;" alt="Client 6" />
+                    <blockquote class="blockquote">
+                        <p>"TechNova is our go‑to partner for all things digital. Their consulting services have been invaluable for our growth."</p>
+                    </blockquote>
+                    <div class="mt-auto">
+                        <strong>Alex W.</strong>
+                        <div class="text-warning">★★★★★</div>
+                        <small class="text-muted">Founder, NexGen Solutions</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 TechNova Solutions. All rights reserved.</p>
+            <small class="text-muted">Built with ❤️ and Bootstrap 5</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
