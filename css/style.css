@@ -25,3 +25,17 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
+
+.card {
+    background-color: var(--bg-card);
+    border-color: var(--border-card);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,0.12);
+}
+body.dark-mode .card:hover {
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,0.5);
+}
