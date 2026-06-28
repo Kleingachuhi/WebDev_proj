@@ -89,3 +89,27 @@
         });
     });
 })();
+
+(function initGalleryFilter() {
+    const filterBtns = document.querySelectorAll('#galleryFilter .btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    if (!filterBtns.length || !galleryItems.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+
+            galleryItems.forEach(item => {
+                const category = item.dataset.category;
+                if (filter === 'all' || category === filter) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    });
+})();
