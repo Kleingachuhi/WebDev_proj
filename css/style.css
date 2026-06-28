@@ -117,3 +117,17 @@ footer {
 body.dark-mode footer {
     border-top-color: #2a3a6c;
 }
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 40vh;
+        padding: 2.5rem 0;
+    }
+    .page-header {
+        padding: 2rem 0;
+    }
+    #darkModeToggle {
+        margin-top: 0.5rem;
+        margin-left: 0 !important;
+    }
+}
