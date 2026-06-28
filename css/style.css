@@ -109,3 +109,11 @@ body.dark-mode .faq-item.highlight .accordion-button {
     background-color: #3a2a1a;
     color: #f0d89e;
 }
+
+footer {
+    background-color: #0d1b2a !important;
+    border-top: 2px solid #1a2a6c;
+}
+body.dark-mode footer {
+    border-top-color: #2a3a6c;
+}
