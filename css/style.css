@@ -1,3 +1,21 @@
 :root{
-    
+    --bg-body: #f8f9fa;
+    --text-body: #212529;
+    --bg-card: #ffffff;
+    --border-card: rgba(0,0,0,0.125);
+    --shadow-card: 0 .5rem 1rem rgba(0,0,0,0.08);
+    --hero-bg: linear-gradient(135deg, #0d1b2a 0%, #1a2a6c 100%);
+    --hero-text: #ffffff;
+    --page-header-bg: #e9ecef;
+    --page-header-text: #212529;
+}
+
+body.dark-mode {
+    --bg-body: #121212;
+    --text-body: #e9ecef;
+    --bg-card: #1e1e2f;
+    --border-card: #2a2a3e;
+    --shadow-card: 0 .5rem 1rem rgba(0,0,0,0.4);
+    --page-header-bg: #1a1a2e;
+    --page-header-text: #e9ecef;
 }
