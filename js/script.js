@@ -2,7 +2,7 @@
     const toggleBtn = document.getElementById('darkModeToggle');
     if (!toggleBtn) return;
 
-    const stored = localStorage.getItem('technova-theme');
+    const stored = localStorage.getItem('leutech-theme');
     if (stored === 'dark') {
         document.body.classList.add('dark-mode');
         toggleBtn.textContent = '☀️';
@@ -13,7 +13,7 @@
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add('dark-mode');
             toggleBtn.textContent = '☀️';
-            localStorage.setItem('technova-theme', 'dark');
+            localStorage.setItem('leutech-theme', 'dark');
         } else {
             toggleBtn.textContent = '🌙';
         }
@@ -22,7 +22,7 @@
     toggleBtn.addEventListener('click', function() {
         const isDark = document.body.classList.toggle('dark-mode');
         this.textContent = isDark ? '☀️' : '🌙';
-        localStorage.setItem('technova-theme', isDark ? 'dark' : 'light');
+        localStorage.setItem('leutech-theme', isDark ? 'dark' : 'light');
     });
 })();
 
@@ -113,7 +113,6 @@
         });
     });
 })();
- 
 
 (function initFaqSearch() {
     const searchInput = document.getElementById('faqSearch');
@@ -142,8 +141,7 @@
             });
         }
     });
-})(); 
-
+})();
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -156,7 +154,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
- 
+
 document.addEventListener('DOMContentLoaded', function() {
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     tooltipTriggerList.map(el => new bootstrap.Tooltip(el));

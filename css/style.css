@@ -1,4 +1,4 @@
-:root{
+:root {
     --bg-body: #f8f9fa;
     --text-body: #212529;
     --bg-card: #ffffff;
@@ -11,19 +11,24 @@
 }
 
 body.dark-mode {
-    --bg-body: #121212;
-    --text-body: #e9ecef;
-    --bg-card: #1e1e2f;
-    --border-card: #2a2a3e;
-    --shadow-card: 0 .5rem 1rem rgba(0,0,0,0.4);
-    --page-header-bg: #1a1a2e;
-    --page-header-text: #e9ecef;
+    --bg-body: #1a1a2e;         
+    --text-body: #f0f0f0;        
+    --bg-card: #2a2a40;
+    --border-card: #3a3a50;
+    --shadow-card: 0 .5rem 1rem rgba(0,0,0,0.6);
+    --page-header-bg: #252540;
+    --page-header-text: #f0f0f0;
 }
+
 body {
     background-color: var(--bg-body);
     color: var(--text-body);
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.hidden {
+    display: none !important;
 }
 
 .card {
@@ -62,7 +67,6 @@ body.dark-mode .card:hover {
 body.dark-mode .page-header {
     border-bottom-color: #4a7dd2;
 }
-
 
 .navbar-brand {
     font-size: 1.6rem;
