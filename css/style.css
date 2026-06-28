@@ -39,3 +39,16 @@ body {
 body.dark-mode .card:hover {
     box-shadow: 0 .75rem 1.5rem rgba(0,0,0,0.5);
 }
+
+.hero-section {
+    min-height: 60vh;
+    background: var(--hero-bg);
+    color: var(--hero-text);
+    padding: 4rem 0;
+}
+.hero-section h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+}
+.hero-section .lead {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
