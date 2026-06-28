@@ -1,23 +1,45 @@
+
 :root {
     --bg-body: #f8f9fa;
     --text-body: #212529;
     --bg-card: #ffffff;
+    --text-card: #212529;
     --border-card: rgba(0,0,0,0.125);
     --shadow-card: 0 .5rem 1rem rgba(0,0,0,0.08);
     --hero-bg: linear-gradient(135deg, #0d1b2a 0%, #1a2a6c 100%);
     --hero-text: #ffffff;
     --page-header-bg: #e9ecef;
     --page-header-text: #212529;
+    --input-bg: #ffffff;
+    --input-text: #212529;
+    --input-placeholder: #6c757d;
+    --accordion-btn-bg: #f8f9fa;
+    --accordion-btn-text: #212529;
+    --accordion-body-bg: #ffffff;
+    --accordion-body-text: #212529;
+    --breadcrumb-bg: transparent;
+    --breadcrumb-text: #212529;
+    --badge-dark-text: #212529;
 }
 
 body.dark-mode {
-    --bg-body: #1a1a2e;         
-    --text-body: #f0f0f0;        
+    --bg-body: #1a1a2e;
+    --text-body: #f0f0f0;
     --bg-card: #2a2a40;
+    --text-card: #f0f0f0;
     --border-card: #3a3a50;
     --shadow-card: 0 .5rem 1rem rgba(0,0,0,0.6);
     --page-header-bg: #252540;
     --page-header-text: #f0f0f0;
+    --input-bg: #2a2a40;
+    --input-text: #f0f0f0;
+    --input-placeholder: #a0a0b0;
+    --accordion-btn-bg: #2a2a40;
+    --accordion-btn-text: #f0f0f0;
+    --accordion-body-bg: #1f1f35;
+    --accordion-body-text: #e0e0e0;
+    --breadcrumb-text: #d0d0d0;
+    --badge-dark-text: #212529; /* keep badges with text-dark readable */
 }
 
 body {
@@ -33,6 +55,7 @@ body {
 
 .card {
     background-color: var(--bg-card);
+    color: var(--text-card);
     border-color: var(--border-card);
     box-shadow: var(--shadow-card);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -44,12 +67,24 @@ body {
 body.dark-mode .card:hover {
     box-shadow: 0 .75rem 1.5rem rgba(0,0,0,0.5);
 }
+.card-title,
+.card-text,
+.card-body > p,
+.card-body > ul,
+.card-body > blockquote {
+    color: var(--text-card);
+}
 
 .hero-section {
     min-height: 60vh;
     background: var(--hero-bg);
-    color: var(--hero-text);
+    color: var(--hero-text) !important;
     padding: 4rem 0;
+}
+.hero-section h1,
+.hero-section p,
+.hero-section .lead {
+    color: #ffffff !important;
 }
 .hero-section h1 {
     font-size: clamp(2.2rem, 6vw, 3.8rem);
@@ -66,6 +101,17 @@ body.dark-mode .card:hover {
 }
 body.dark-mode .page-header {
     border-bottom-color: #4a7dd2;
+}
+
+.breadcrumb {
+    background-color: var(--breadcrumb-bg);
+}
+.breadcrumb-item a {
+    color: var(--breadcrumb-text);
+    text-decoration: none;
+}
+.breadcrumb-item.active {
+    color: var(--breadcrumb-text);
 }
 
 .navbar-brand {
@@ -104,7 +150,26 @@ body.dark-mode #galleryFilter .btn.active {
     background-color: #4a7dd2;
     border-color: #4a7dd2;
 }
+#galleryFilter .btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(26,42,108,0.4);
+}
 
+.accordion-item {
+    background-color: var(--bg-card);
+    border-color: var(--border-card);
+}
+.accordion-button {
+    background-color: var(--accordion-btn-bg);
+    color: var(--accordion-btn-text);
+}
+.accordion-button:not(.collapsed) {
+    background-color: var(--accordion-btn-bg);
+    color: var(--accordion-btn-text);
+}
+.accordion-body {
+    background-color: var(--accordion-body-bg);
+    color: var(--accordion-body-text);
+}
 .faq-item.highlight .accordion-button {
     background-color: #fff3cd;
     color: #856404;
@@ -113,6 +178,32 @@ body.dark-mode .faq-item.highlight .accordion-button {
     background-color: #3a2a1a;
     color: #f0d89e;
 }
+body.dark-mode .accordion-button::after {
+    filter: invert(1);
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: var(--border-card);
+}
+.form-control::placeholder {
+    color: var(--input-placeholder);
+}
+.form-control:focus {
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border-color: #4a7dd2;
+    box-shadow: 0 0 0 0.2rem rgba(26,42,108,0.25);
+}
+
+.badge.text-dark {
+    color: var(--badge-dark-text) !important;
+}
+
+.display-5 {
+    color: var(--text-body);
+}
 
 footer {
     background-color: #0d1b2a !important;
@@ -120,6 +211,12 @@ footer {
 }
 body.dark-mode footer {
     border-top-color: #2a3a6c;
+}
+footer a {
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #ffffff !important;
 }
 
 @media (max-width: 768px) {

@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LeuTech Devs project gallery – web, mobile, cloud, and design work." />
     <title>Gallery — LeuTech Devs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">LeuTech Devs</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNav">
@@ -20,16 +21,23 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item">
-                        <button id="darkModeToggle" class="btn btn-outline-light btn-sm ms-2" aria-label="Toggle dark mode">🌙</button>
+                        <button id="darkModeToggle" class="btn btn-outline-light btn-sm ms-2" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
                     </li>
                 </ul>
             </div>
         </div>
+    </nav>
+
+    <nav aria-label="Breadcrumb">
+        <ol class="breadcrumb container pt-3">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+        </ol>
     </nav>
 
     <header class="page-header text-center py-5">
@@ -39,23 +47,24 @@
         </div>
     </header>
 
-    <section class="container">
-        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="galleryFilter">
-            <button class="btn btn-outline-primary active" data-filter="all">All</button>
-            <button class="btn btn-outline-primary" data-filter="web">Web</button>
-            <button class="btn btn-outline-primary" data-filter="mobile">Mobile</button>
-            <button class="btn btn-outline-primary" data-filter="cloud">Cloud</button>
-            <button class="btn btn-outline-primary" data-filter="design">Design</button>
+    <section class="container" aria-label="Filter gallery">
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="galleryFilter" role="group" aria-label="Filter projects by category">
+            <button class="btn btn-outline-primary active" data-filter="all" aria-pressed="true">All</button>
+            <button class="btn btn-outline-primary" data-filter="web" aria-pressed="false">Web</button>
+            <button class="btn btn-outline-primary" data-filter="mobile" aria-pressed="false">Mobile</button>
+            <button class="btn btn-outline-primary" data-filter="cloud" aria-pressed="false">Cloud</button>
+            <button class="btn btn-outline-primary" data-filter="design" aria-pressed="false">Design</button>
         </div>
     </section>
 
-    <section class="container my-4">
+    <section class="container my-4" aria-labelledby="gallery-grid">
         <div class="row g-4" id="galleryGrid">
             <div class="col-md-4 col-sm-6 gallery-item" data-category="web">
                 <div class="card shadow-sm h-100">
                     <img src="https://picsum.photos/seed/project1/400/300" class="card-img-top" alt="E‑commerce platform" />
                     <div class="card-body">
                         <h6 class="card-title">E‑commerce Platform</h6>
+                        <p class="small text-muted">A full-featured online store with payment integration and real‑time inventory.</p>
                         <span class="badge bg-primary">Web</span>
                     </div>
                 </div>
@@ -65,6 +74,7 @@
                     <img src="https://picsum.photos/seed/project2/400/300" class="card-img-top" alt="Health tracking app" />
                     <div class="card-body">
                         <h6 class="card-title">Health Tracking App</h6>
+                        <p class="small text-muted">Cross‑platform app for monitoring fitness metrics and sharing with healthcare providers.</p>
                         <span class="badge bg-success">Mobile</span>
                     </div>
                 </div>
@@ -74,6 +84,7 @@
                     <img src="https://picsum.photos/seed/project3/400/300" class="card-img-top" alt="Cloud migration" />
                     <div class="card-body">
                         <h6 class="card-title">Cloud Migration</h6>
+                        <p class="small text-muted">Seamless migration of legacy systems to AWS with zero downtime and cost savings.</p>
                         <span class="badge bg-info text-dark">Cloud</span>
                     </div>
                 </div>
@@ -83,6 +94,7 @@
                     <img src="https://picsum.photos/seed/project4/400/300" class="card-img-top" alt="UI redesign" />
                     <div class="card-body">
                         <h6 class="card-title">UI/UX Redesign</h6>
+                        <p class="small text-muted">Complete overhaul of a B2B SaaS platform, increasing user engagement by 45%.</p>
                         <span class="badge bg-warning text-dark">Design</span>
                     </div>
                 </div>
@@ -92,6 +104,7 @@
                     <img src="https://picsum.photos/seed/project5/400/300" class="card-img-top" alt="Corporate website" />
                     <div class="card-body">
                         <h6 class="card-title">Corporate Website</h6>
+                        <p class="small text-muted">Modern, accessible website for a financial services firm with integrated CMS.</p>
                         <span class="badge bg-primary">Web</span>
                     </div>
                 </div>
@@ -101,6 +114,7 @@
                     <img src="https://picsum.photos/seed/project6/400/300" class="card-img-top" alt="Delivery app" />
                     <div class="card-body">
                         <h6 class="card-title">Delivery App</h6>
+                        <p class="small text-muted">Real‑time tracking and route optimisation for a food delivery startup.</p>
                         <span class="badge bg-success">Mobile</span>
                     </div>
                 </div>
@@ -110,6 +124,7 @@
                     <img src="https://picsum.photos/seed/project7/400/300" class="card-img-top" alt="DevOps pipeline" />
                     <div class="card-body">
                         <h6 class="card-title">DevOps Pipeline</h6>
+                        <p class="small text-muted">Automated CI/CD pipeline with Kubernetes orchestration for a fintech client.</p>
                         <span class="badge bg-info text-dark">Cloud</span>
                     </div>
                 </div>
@@ -119,6 +134,7 @@
                     <img src="https://picsum.photos/seed/project8/400/300" class="card-img-top" alt="Design system" />
                     <div class="card-body">
                         <h6 class="card-title">Design System</h6>
+                        <p class="small text-muted">Comprehensive design system with reusable components for a large‑scale product.</p>
                         <span class="badge bg-warning text-dark">Design</span>
                     </div>
                 </div>
@@ -128,6 +144,7 @@
                     <img src="https://picsum.photos/seed/project9/400/300" class="card-img-top" alt="SaaS dashboard" />
                     <div class="card-body">
                         <h6 class="card-title">SaaS Dashboard</h6>
+                        <p class="small text-muted">Interactive analytics dashboard with real‑time data visualisations.</p>
                         <span class="badge bg-primary">Web</span>
                     </div>
                 </div>
@@ -135,10 +152,37 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2026 LeuTech Devs. All rights reserved.</p>
-            <small class="text-muted">Built with HTML, CSS, JS and Bootstrap 5</small>
+    <footer class="bg-dark text-white py-4 mt-5" aria-label="Footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>LeuTech Devs</h5>
+                    <p class="text-muted small">Innovative digital solutions for modern businesses.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li><a href="gallery.html" class="text-white-50 text-decoration-none">Gallery</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <address class="small text-muted">
+                        <span class="d-block">123 LeuTech Devs Lane, Suite 400</span>
+                        <span class="d-block">San Francisco, CA 94105</span>
+                        <span class="d-block">📞 <a href="tel:+18005550199" class="text-white-50 text-decoration-none">+1 (800) 555‑0199</a></span>
+                        <span class="d-block">✉️ <a href="mailto:hello@leutechdevs.dev" class="text-white-50 text-decoration-none">hello@leutechdevs.dev</a></span>
+                    </address>
+                </div>
+            </div>
+            <hr class="border-secondary" />
+            <div class="text-center small text-muted">
+                <p class="mb-0">&copy; 2026 LeuTech Devs. All rights reserved.</p>
+                <span>Built with HTML, CSS, JS and Bootstrap 5</span>
+            </div>
         </div>
     </footer>
 

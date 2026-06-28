@@ -6,25 +6,36 @@
     if (stored === 'dark') {
         document.body.classList.add('dark-mode');
         toggleBtn.textContent = '☀️';
+        toggleBtn.setAttribute('aria-pressed', 'true');
+        toggleBtn.setAttribute('aria-label', 'Switch to light mode');
     } else if (stored === 'light') {
         document.body.classList.remove('dark-mode');
         toggleBtn.textContent = '🌙';
+        toggleBtn.setAttribute('aria-pressed', 'false');
+        toggleBtn.setAttribute('aria-label', 'Switch to dark mode');
     } else {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.classList.add('dark-mode');
             toggleBtn.textContent = '☀️';
+            toggleBtn.setAttribute('aria-pressed', 'true');
+            toggleBtn.setAttribute('aria-label', 'Switch to light mode');
             localStorage.setItem('leutech-theme', 'dark');
         } else {
             toggleBtn.textContent = '🌙';
+            toggleBtn.setAttribute('aria-pressed', 'false');
+            toggleBtn.setAttribute('aria-label', 'Switch to dark mode');
         }
     }
 
     toggleBtn.addEventListener('click', function() {
         const isDark = document.body.classList.toggle('dark-mode');
         this.textContent = isDark ? '☀️' : '🌙';
+        this.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        this.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
         localStorage.setItem('leutech-theme', isDark ? 'dark' : 'light');
     });
 })();
+
 
 (function initContactForm() {
     const form = document.getElementById('contactForm');
@@ -36,6 +47,7 @@
         form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
         const feedback = document.getElementById('formFeedback');
         feedback.innerHTML = '';
+        feedback.setAttribute('role', 'alert');
 
         let isValid = true;
 
@@ -90,6 +102,7 @@
     });
 })();
 
+
 (function initGalleryFilter() {
     const filterBtns = document.querySelectorAll('#galleryFilter .btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
@@ -97,8 +110,12 @@
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            filterBtns.forEach(b => b.classList.remove('active'));
+            filterBtns.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
 
             const filter = this.dataset.filter;
 
@@ -113,6 +130,7 @@
         });
     });
 })();
+
 
 (function initFaqSearch() {
     const searchInput = document.getElementById('faqSearch');
@@ -143,6 +161,7 @@
     });
 })();
 
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -154,6 +173,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
