@@ -113,3 +113,33 @@
         });
     });
 })();
+ 
+
+(function initFaqSearch() {
+    const searchInput = document.getElementById('faqSearch');
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!searchInput || !faqItems.length) return;
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+
+        faqItems.forEach(item => {
+            const button = item.querySelector('.accordion-button');
+            const text = button ? button.textContent.toLowerCase() : '';
+            const body = item.querySelector('.accordion-body');
+            const bodyText = body ? body.textContent.toLowerCase() : '';
+
+            const match = text.includes(query) || bodyText.includes(query);
+
+            item.style.display = match ? '' : 'none';
+            item.classList.toggle('highlight', match && query.length > 0);
+        });
+
+        if (!query) {
+            faqItems.forEach(item => {
+                item.style.display = '';
+                item.classList.remove('highlight');
+            });
+        }
+    });
+})();
