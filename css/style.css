@@ -19,3 +19,9 @@ body.dark-mode {
     --page-header-bg: #1a1a2e;
     --page-header-text: #e9ecef;
 }
+body {
+    background-color: var(--bg-body);
+    color: var(--text-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
