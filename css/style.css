@@ -52,3 +52,13 @@ body.dark-mode .card:hover {
 .hero-section .lead {
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
+
+.page-header {
+    background-color: var(--page-header-bg);
+    color: var(--page-header-text);
+    padding: 3rem 0;
+    border-bottom: 3px solid #1a2a6c;
+}
+body.dark-mode .page-header {
+    border-bottom-color: #4a7dd2;
+}
